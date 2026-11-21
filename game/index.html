@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasar Malam — Cari Bedanya!</title>
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Pasar Malam — Cari Bedanya!</h1>
+      <p class="tagline">Dua gambar nyaris sama. Temukan semua perbedaannya sebelum waktu habis.</p>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="hud-box"><div class="label">Level</div><div class="value" id="hud-level">—</div></div>
+    <div class="hud-box"><div class="label">Ditemukan</div><div class="value" id="hud-found">0/8</div></div>
+    <div class="hud-box big"><div class="label">Sisa Perbedaan</div><div class="value" id="hud-left">Sisa: 8</div></div>
+    <div class="hud-box timer timer-wrap"><div class="label">Waktu</div><div class="value" id="hud-timer">2:00</div><div class="timer-bar-outer"><div class="timer-fill" id="timer-bar"></div></div></div>
+    <div class="hud-box"><div class="label">Skor</div><div class="value" id="hud-score">Skor: 0</div></div>
+    <div class="hud-box"><div class="label">Hint</div><div class="value" id="hud-hints">Hint: 3</div></div>
+  </div>
+
+  <div class="stage">
+    <canvas id="game" aria-label="Game cari bedanya: dua gambar berdampingan, klik perbedaannya"></canvas>
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <div class="controls">
+    <button id="btn-hint">Hint (H)</button>
+    <button id="btn-mag" class="ghost">Kaca Pembesar (M)</button>
+    <button id="btn-mute" class="ghost">Suara: NYALA</button>
+    <button id="btn-restart" class="ghost">Ulangi Level</button>
+    <div class="level-dots" id="level-dots"></div>
+  </div>
+
+  <p class="help">Cara main: klik perbedaan di gambar kiri ATAU kanan. Panah = gerakkan bidikan, Enter = pilih, H = hint, M = kaca pembesar. Klik salah: −25 poin dan −3 detik.</p>
+</div>
+
+<div class="overlay hidden" id="overlay">
+  <div class="overlay-card">
+    <h2 id="overlay-title"></h2>
+    <p id="overlay-text"></p>
+    <button id="overlay-btn"></button>
+  </div>
+</div>
+
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
